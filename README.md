@@ -13,7 +13,7 @@ fetchDispatch('api.example.com', receiveAction)(store.dispatch)
 
 ## Motivation
 
-The [Redux docs] recommend using [redux-thunk] for getting data from an API and then dispatching an action when it comes back.
+The [Redux docs](http://rackt.org/redux/docs/advanced/AsyncActions.html) recommend using [redux-thunk](https://github.com/gaearon/redux-thunk) for getting data from an API and then dispatching an action when it comes back.
 
 This ends up creating a lot of unnecessary action creators with hard-coded URLs, spread out over many files. It's also difficult to test these action creators without mocking a server connection.
 
