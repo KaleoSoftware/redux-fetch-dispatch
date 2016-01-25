@@ -1,6 +1,12 @@
 import fetch from 'isomorphic-fetch'
 
 export default function fetchDispatch(url, options = {}, actions = {}) {
+	// If there are only two parameters, the second one is actions
+	if (actions === {}) {
+		actions = options
+		options = undefined
+	}
+
 	return (dispatch) => {
 
 		if (typeof actions.request === 'function')  {
