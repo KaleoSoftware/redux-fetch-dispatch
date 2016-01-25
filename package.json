@@ -1,6 +1,6 @@
 {
   "name": "redux-fetch-dispatch",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Simple fetch-then-dispatch function for redux.",
   "main": "lib/index.js",
   "jsnext:main": "src/index.js",
