@@ -19,7 +19,7 @@ export default function fetchDispatch(url, options = {}, actions = {}) {
 			})
 			.then( (json) => {
 				if (typeof actions.success === 'function') {
-					dispatch(action(json))
+					dispatch(actions.success(json))
 				}
 
 				return json
@@ -29,5 +29,4 @@ export default function fetchDispatch(url, options = {}, actions = {}) {
 					dispatch(actions.fail(err))
 				}
 			})
-	}
-}
+
