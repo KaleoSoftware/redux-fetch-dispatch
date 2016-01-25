@@ -29,4 +29,5 @@ export default function fetchDispatch(url, options = {}, actions = {}) {
 					dispatch(actions.fail(err))
 				}
 			})
-
+	}
+}
