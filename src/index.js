@@ -15,19 +15,23 @@ export default function fetchDispatch(url, options = {}, actions = {}) {
 
 		return fetch(url, options)
 			.then( (response) => {
-				return response.json()
+				if (response.status.toString().charAt(0) === '2') {
+					return response.json()
+				} else if (response.status.toString().charAt(0) === '4') {
+					throw response.json()
+				}
 			})
 			.then( (json) => {
 				if (typeof actions.success === 'function') {
 					dispatch(actions.success(json))
 				}
-
 				return json
 			})
 			.catch( (err) => {
 				if (typeof actions.fail === 'function') {
 					dispatch(actions.fail(err))
 				}
+				return err
 			})
 	}
 }
